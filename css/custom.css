@@ -1,0 +1,46 @@
+input {
+	margin: 0.25em;
+}
+button {
+	margin: 0.5em;
+}
+a {
+	color: #216C2A;
+}
+a:hover {
+	color: #4E9455;
+}
+hr {
+	border-top: 1px dotted #E0E0E0;
+}
+h2, h3 {
+	color: #203D6C;
+}
+.message {
+	background-color: #B1D0B5;
+	font-size: 0.95em;
+}
+.table {
+	border: 1px dotted #B1D0B5;
+}
+#hint {
+	font-size: 0.9em;
+	background-color: #E0E0E0;
+	padding: 0.25em;
+}
+.payday_row {
+	background-color: #B1D0B5 !important;
+}
+.bill_due {
+	background-color: #FFF0F5;
+}
+.negative_balance {
+	color: #FF0000;
+}
+.transaction_entered {
+	background-color: #203D6C;
+}
+#fifty, #thirty, #twenty {
+	font-weight: bold;
+	color: #216C2A;
+}

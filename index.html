@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Budget Buddy Table</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/budgetbuddy.js"></script>
+    <script type="text/javascript" src="js/forms.js"></script>
+  </head>
+
+  <body>
+  	<div class="container">
+			<header class="row">
+				<h1><a href="#" id="refresh">Budget Buddy</a></h1>
+				<p>Welcome! Most budget calculators ask you to enter your monthly expenses
+					and your monthly income, and then they do a simple subtraction. However, for those who
+					have a tough time budgeting, it is helpful to take into account what you have now, 
+					when you get paid, and when bills are due. Budget Buddy helps you visualize the short
+					term, with a table showing how your balance will change with the comings and goings
+					of your finances. It also lets you add additional transactions, so you can
+					imagine potential purchases.
+				</p>
+				<p>
+					First, use the column on the left to enter information about your income and available funds. Then, use the column on the right to add your regular monthly bills. Finally, select the date to which you would like Budget Buddy to forecast.
+				</p>
+			</header>
+			<div class="row hidden" id="advice">
+				<h2>50/20/30 Rule</h2>
+				<p>Many financial experts recommend the <a href="http://www.learnvest.com/knowledge-center/your-ultimate-budget-guideline-the-502030-rule/" target="_blank">50/30/20 Rule</a> for budgeting one's money. The rule splits expenses into three categories: <em>fixed expenses</em> (like rent/mortgage, utilities, loan payments, subscriptions), <em>financial goals</em> (like saving for retirement or a down payment), and <em>flexible spending</em> (like groceries, dining out, shopping).</p>
+				<p>According to your input, you should aim to spend about <span id="fifty">$</span> on fixed expenses, <span id="twenty">$</span> on financial goals, and <span id="thirty">$</span> on flexible spending.</p>
+				<p id="hint">Hint: When you type a number into the transaction column,
+					hit "Enter" or "Return" when you're finished!</p>
+			</div>
+  		<div class="row" id="form">
+  			<div class="col-sm-6">
+  				<h3>Your Funds</h3>
+
+			    <p>
+			        <label name="balance">Your current balance: $</label>
+			        <input type="text" name="balance" id="balance" size="8" required> <span class="message" id="balanceMessage"></span>
+
+			    </p>
+			    <p>
+			        <label name="payDay">Date of your last paycheck:</label>
+			        <input type="text" name="payDay" id="payDay" size="10" required>  <span class="message" id="payDayMessage"></span>
+			    </p>
+			    <p>
+			        <label name="payCheck">Amount of your paycheck: $</label>
+			        <input type="text" name="payCheck" id="payCheck" size="8" required> <span class="message" id="payCheckMessage"></span>
+			        <br><span class="note" id="irregular">Unfortunately, if your paycheck is not regular, Budget Buddy will not work for you.</span>
+
+			        <p>
+			            <label name= "f">How frequently are you paid?</label>
+			        </p>
+			        <input type="radio" name="f" value="7" id="weekly"> Weekly
+			        <br>
+			        <input type="radio" name="f" value="14" id="biweekly"> Biweekly
+			        <br>
+			        <input type="radio" name="f" value="0" id="monthly" required> Monthly
+			        <p><span class="message" id="fMessage"></span>
+
+			            <div class="hidden" id="monthly-frequency">On the
+			                <select name="n">
+			                    <option value="1">First</option>
+			                    <option value="2">Second</option>
+			                    <option value="3">Third</option>
+			                    <option value="4">Fourth</option>
+			                </select>
+			                <select name="m">
+			                    <option value="0">Sunday</option>
+			                    <option value="1">Monday</option>
+			                    <option value="2">Tuesday</option>
+			                    <option value="3">Wednesday</option>
+			                    <option value="4">Thursday</option>
+			                    <option value="5">Friday</option>
+			                    <option value="6">Saturday</option>
+			                </select>of the month
+			                <br>
+			            </div>
+			            <br>
+			            <label name="targetDate">Until when would you like Budget Buddy to forecast?</label>
+			                <input type="text" name="targetDate" id="targetDate" size="10" required> <span class="message" id="targetDateMessage"></span>
+			            <div class="submit">
+			                <button id="submit" class="btn btn-primary">Submit</button>
+			            </div>
+			        </div>
+  			<div class="col-sm-6">
+	  			<h3>Your Bills</h3>
+
+			    <div class="bills">
+			        <button class="btn btn-success" id="createBill">Add a bill</button>
+			    </div>
+			</div>
+  		</div>
+  		<div class="row hidden" id="buddySheet">
+		  	<table class="table table-bordered table-striped" id="table">
+			    <tr>
+			        <th>Date</th>
+			        <th>Balance</th>
+			        <th>Bill</th>
+			        <th>Paycheck</th>
+			        <th>Transaction</th>
+			    </tr>
+			</table>
+		</div>
+	</div>
+  </body>
+</html>
