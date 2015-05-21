@@ -24,7 +24,7 @@
 					imagine potential purchases.
 				</p>
 				<p>
-					First, use the column on the left to enter information about your income and available funds. Then, use the column on the right to add your regular monthly bills. Finally, select the date to which you would like Budget Buddy to forecast.
+					First, use the column on the left to add your regular monthly bills. Then, use the column on the right to enter information about your income and available funds. Finally, select the date to which you would like Budget Buddy to forecast.
 				</p>
 			</header>
 			<div class="row hidden" id="advice">
@@ -35,6 +35,13 @@
 					hit "Enter" or "Return" when you're finished!</p>
 			</div>
   		<div class="row" id="form">
+  			<div class="col-sm-6">
+	  			<h3>Your Bills</h3>
+
+			    <div class="bills">
+			        <button class="btn btn-success" id="createBill">Add a bill</button>
+			    </div>
+			</div>
   			<div class="col-sm-6">
   				<h3>Your Funds</h3>
 
@@ -87,13 +94,6 @@
 			                <button id="submit" class="btn btn-primary">Submit</button>
 			            </div>
 			        </div>
-  			<div class="col-sm-6">
-	  			<h3>Your Bills</h3>
-
-			    <div class="bills">
-			        <button class="btn btn-success" id="createBill">Add a bill</button>
-			    </div>
-			</div>
   		</div>
   		<div class="row hidden" id="buddySheet">
 		  	<table class="table table-bordered table-striped" id="table">
